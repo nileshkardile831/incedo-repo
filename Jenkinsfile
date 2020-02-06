@@ -1,14 +1,14 @@
 pipeline {
   environment {
     registry = "nileshkardile831/incedo"
-    registryCredential = 'Git Credentials'
+    registryCredential = 'docker-hub-credentials'
     dockerImage = ''
   }
   agent any
   stages {
     stage('Cloning Git') {
       steps {
-	git 'https://github.com/nileshkardile831/docker-repo.git'
+	git 'https://github.com/nileshkardile831/incedo-repo.git'
       }
     }
     stage('Building image') {
