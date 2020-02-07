@@ -6,22 +6,23 @@ pipeline {
   }
   agent any
   stages {
-    stage('Clone Git') {
+    stage('Checkout') {
       steps {
 	git 'https://github.com/nileshkardile831/incedo-repo.git'
       }
     }
-    stage('Build image') {
+    stage('Docker Build') {
       steps{
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
-    stage('Push Image') {
+    stage('Docker Push') {
       steps{
         script {
-          docker.withRegistry( '', registryCredential ) {
+#          docker.withRegistry( '', registryCredential ) {
+	   docker.withRegistry(https://116127484844.dkr.ecr.us-east-2.amazonaws.com){
             dockerImage.push()
           }
         }
