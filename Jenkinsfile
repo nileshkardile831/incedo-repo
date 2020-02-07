@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "nileshkardile831/incedo"
+    registry = "test/cicd"
     registryCredential = 'docker-hub-credentials'
     dockerImage = ''
   }
@@ -21,7 +21,6 @@ pipeline {
     stage('Docker Push') {
       steps{
         script {
-#          docker.withRegistry( '', registryCredential ) {
 	   docker.withRegistry(https://116127484844.dkr.ecr.us-east-2.amazonaws.com){
             dockerImage.push()
           }
