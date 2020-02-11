@@ -32,7 +32,7 @@ spec:
         - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
         - --kubelet-insecure-tls
         - --metric-resolution=30s
-      - name: metrics-server
+        name: metrics-server
         image: k8s.gcr.io/metrics-server-amd64:v0.3.6
         imagePullPolicy: Always
         volumeMounts:
