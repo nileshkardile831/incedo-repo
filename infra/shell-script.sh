@@ -10,6 +10,8 @@ sudo /usr/bin/terraform plan;
 sudo /usr/bin/terraform apply -auto-approve;
 sudo /home/ec2-user/istio-install/istio-1.4.3/bin/istioctl manifest apply --set profile=demo
 
+sudo /usr/bin/kubectl apply -f ./metrics-server-0.3.6/deploy/1.8+/
+
 cd ../third_party_framework
 sudo /usr/bin/kubectl apply -f grafana.yaml
 sudo /usr/bin/kubectl apply -f kaili.yaml
