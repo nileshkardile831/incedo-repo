@@ -28,10 +28,25 @@ spec:
       - name: tmp-dir
         emptyDir: {}
       containers:
+      - args:
+        - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+        - --kubelet-insecure-tls
+        - --metric-resolution=30s
       - name: metrics-server
         image: k8s.gcr.io/metrics-server-amd64:v0.3.6
         imagePullPolicy: Always
         volumeMounts:
         - name: tmp-dir
           mountPath: /tmp
+      dnsPolicy: ClusterFirst
+      hostNetwork: true
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: metrics-server
+      serviceAccountName: metrics-server
+      terminationGracePeriodSeconds: 300
+      volumes:
+      - emptyDir: {}
+        name: tmp-dir
 
