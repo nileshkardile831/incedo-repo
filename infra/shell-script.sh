@@ -7,4 +7,4 @@ home_dir=/var/lib/jenkins/workspace/EKS-Demo-Infra/infra
 cd $home_dir
 sudo /usr/bin/terraform init;
 sudo /usr/bin/terraform plan;
-#sudo /usr/bin/terraform apply;
+sudo /usr/bin/terraform apply;
