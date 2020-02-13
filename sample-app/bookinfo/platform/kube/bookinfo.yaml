@@ -238,7 +238,11 @@ spec:
       serviceAccountName: bookinfo-productpage
       containers:
       - name: productpage
+<<<<<<< HEAD
         image: nileshkardile831/istio:bookinfo-productpage-v1 
+=======
+        image: nileshkardile831/istio:bookinfo-productpage-v1
+>>>>>>> af3a53ad494bab3aa43b5925218d6df46c2b51f2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
