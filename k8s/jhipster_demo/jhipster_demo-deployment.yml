@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jhipster_demo
-  namespace: employee_mgmt
+  name: jhipster-demo
+  namespace: employee-mgmt
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jhipster_demo
+      app: jhipster-demo
       version: 'v1'
   template:
     metadata:
       labels:
-        app: jhipster_demo
+        app: jhipster-demo
         version: 'v1'
     spec:
       initContainers:
@@ -24,7 +24,7 @@ spec:
             - |
               while true
               do
-                rt=$(nc -z -w 1 jhipster_demo-postgresql 5432)
+                rt=$(nc -z -w 1 jhipster-demo-postgresql 5432)
                 if [ $? -eq 0 ]; then
                   echo "DB is UP"
                   break
@@ -33,8 +33,8 @@ spec:
                 sleep 10
               done
       containers:
-        - name: jhipster_demo-app
-          image: demoapp2020/jhipster_demo
+        - name: jhipster-demo-app
+          image: demoapp2020/emp-mgmt:1.0.0.19
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
@@ -44,13 +44,13 @@ spec:
                   name: jwt-secret
                   key: secret
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://jhipster_demo-postgresql.employee_mgmt.svc.cluster.local:5432/jhipster_demo
+              value: jdbc:postgresql://jhipster-demo-postgresql.employee-mgmt.svc.cluster.local:5432/jhipster-demo
             - name: SPRING_DATASOURCE_USERNAME
-              value: jhipster_demo
+              value: jhipster-demo
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: jhipster_demo-postgresql
+                  name: jhipster-demo-postgresql
                   key: postgresql-password
             - name: JAVA_OPTS
               value: ' -Xmx256m -Xms256m'
