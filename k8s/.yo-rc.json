@@ -1,0 +1,16 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["EMP_MGMT"],
+    "directoryPath": "../",
+    "serviceDiscoveryType": false,
+    "jwtSecretKey": "Y2Q3OTI1OWQ1MGIxZDYzODJkMzNhMTY4ZWRjOWY3MzczYTcxOGExODdlOGZlMWIwOWQyZDkyODkwNmZhMTk1MTQxZDdiYTNlOTAzZGU4ZGFmNDI5OWEwNzEyYTJmYTc3ZmM2Yg==",
+    "dockerRepositoryName": "demoapp2020",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "employee_mgmt",
+    "kubernetesServiceType": "LoadBalancer",
+    "kubernetesUseDynamicStorage": false,
+    "ingressDomain": "",
+    "monitoring": "no",
+    "istio": false
+  }
+}
