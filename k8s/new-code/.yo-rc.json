@@ -1,0 +1,15 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["jhip_micro"],
+    "directoryPath": "../",
+    "serviceDiscoveryType": false,
+    "jwtSecretKey": "MWE1MmY3Mjg5MzE4YzE5MTNiOTM5MGFhZmVkODczYWM0NzE0ZDg3YTIzYjkzYTY2NThiZWE1MWFkMmJmZGZlMDFjYTI3NDQ2NDgwZDA1ZjJlMGE3ZDAwYmRjMmNhNTg1YTYxNw==",
+    "dockerRepositoryName": "demoapp2020",
+    "dockerPushCommand": "emp-mgmt",
+    "kubernetesNamespace": "jhipster",
+    "kubernetesUseDynamicStorage": false,
+    "ingressDomain": "35.195.81.130.nip.io",
+    "monitoring": "no",
+    "istio": true
+  }
+}
