@@ -34,7 +34,7 @@ spec:
               done
       containers:
         - name: empmgmt-app
-          image: demoapp2020/empmgmt
+          image: demoapp2020/emp-mgmt:1.0.0.0.19
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
