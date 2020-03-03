@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: empmgmt-virtualservice
+  namespace: jhipster
+spec:
+  hosts:
+    - empmgmt
+  http:
+    - route:
+        - destination:
+            host: empmgmt
+            subset: 'v1'
+          weight: 100
+      retries:
+        attempts: 3
+        perTryTimeout: 2s

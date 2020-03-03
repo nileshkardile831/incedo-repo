@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: empmgmt
+  namespace: jhipster
+  labels:
+    app: empmgmt
+spec:
+  selector:
+    app: empmgmt
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8081
