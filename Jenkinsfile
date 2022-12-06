@@ -14,7 +14,7 @@ pipeline {
     stage('Docker Build') {
       steps{
         script {
-          dockerImage = docker.build registry + ":latest-$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":latests-$BUILD_NUMBER"
         }
       }
     }
